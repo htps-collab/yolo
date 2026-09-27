@@ -1,0 +1,7 @@
+# source + derived media (too large for git; see HANDOFF.md §5)
+*.mp4
+*.mp3
+*.wav
+*.npy
+*.jpg
+*.png

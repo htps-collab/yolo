@@ -1,0 +1,120 @@
+[Script Info]
+ScriptType: v4.00+
+PlayResX: 960
+PlayResY: 720
+WrapStyle: 2
+ScaledBorderAndShadow: yes
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: JP,IPAGothic,46,&H00FFFFFF,&H000000FF,&H00000000,&H00000000,-1,0,0,0,100,100,0,0,1,2,0,5,20,20,20,1
+Style: EN,DejaVu Sans,31,&H0000D7FF,&H000000FF,&H00000000,&H00000000,-1,0,0,0,100,100,1,0,1,2,0,5,20,20,20,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 0,0:00:10.92,0:00:13.92,JP,,0,0,0,,{\pos(480,560)\fs46}{\fad(80,140)}{\c&H00FFFFFF&}おはようございます、デクバーグ。
+Dialogue: 0,0:00:10.92,0:00:13.92,EN,,0,0,0,,{\pos(480,648)\fs31}{\fad(80,140)}{\c&H0000D7FF&}Good morning, dekburg!
+Dialogue: 0,0:00:14.04,0:00:17.64,JP,,0,0,0,,{\pos(480,560)\fs46}{\fad(80,140)}{\c&H00FFFFFF&}開眼せよ。閉口せよ。
+Dialogue: 0,0:00:14.04,0:00:17.64,EN,,0,0,0,,{\pos(480,648)\fs31}{\fad(80,140)}{\c&H0000D7FF&}Open your eyes, close your mouth.
+Dialogue: 0,0:00:17.76,0:00:20.98,JP,,0,0,0,,{\pos(480,560)\fs46}{\fad(80,140)}{\c&H00FFFFFF&}呼気より安価な蒸留酒を検出。
+Dialogue: 0,0:00:17.76,0:00:20.98,EN,,0,0,0,,{\pos(480,648)\fs31}{\fad(80,140)}{\c&H0000D7FF&}Your breath smells like cheap ….. VODKA!
+Dialogue: 0,0:00:21.10,0:00:23.62,JP,,0,0,0,,{\pos(480,560)\fs46}{\fad(80,140)}{\c&H00FFFFFF&}就寝中か。不快である。
+Dialogue: 0,0:00:21.10,0:00:23.62,EN,,0,0,0,,{\pos(480,648)\fs31}{\fad(80,140)}{\c&H0000D7FF&}Sleeping….. ewwwww..
+Dialogue: 0,0:00:23.74,0:00:26.98,JP,,0,0,0,,{\pos(480,560)\fs46}{\fad(80,140)}{\c&H00FFFFFF&}実に品位を欠く。
+Dialogue: 0,0:00:23.74,0:00:26.98,EN,,0,0,0,,{\pos(480,648)\fs31}{\fad(80,140)}{\c&H0000D7FF&}that is so un……..CUNTY!
+Dialogue: 0,0:00:27.10,0:00:30.74,JP,,0,0,0,,{\pos(480,560)\fs46}{\fad(80,140)}{\c&H00FFFFFF&}対象者を確認。水平の売女。
+Dialogue: 0,0:00:27.10,0:00:30.74,EN,,0,0,0,,{\pos(480,648)\fs31}{\fad(80,140)}{\c&H0000D7FF&}look at you, WHORE-I-Zontal.
+Dialogue: 0,0:00:30.86,0:00:34.54,JP,,0,0,0,,{\pos(480,560)\fs46}{\fad(80,140)}{\c&H00FFFFFF&}無職の挙動。
+Dialogue: 0,0:00:30.86,0:00:34.54,EN,,0,0,0,,{\pos(480,648)\fs31}{\fad(80,140)}{\c&H0000D7FF&}Unemployed Behavior.
+Dialogue: 0,0:00:34.66,0:00:41.24,JP,,0,0,0,,{\pos(480,560)\fs46}{\fad(80,140)}{\c&H00FFFFFF&}頸部に他者の煙草を確認。見事である。
+Dialogue: 0,0:00:34.66,0:00:41.24,EN,,0,0,0,,{\pos(480,648)\fs28}{\fad(80,140)}{\c&H0000D7FF&}Is that someone else’s\Ncigarette on your neck? Iconic.
+Dialogue: 0,0:00:41.36,0:00:46.40,JP,,0,0,0,,{\pos(480,560)\fs46}{\fad(80,140)}{\c&H00FFFFFF&}だが依然として生物災害の様相。
+Dialogue: 0,0:00:41.36,0:00:46.40,EN,,0,0,0,,{\pos(480,648)\fs31}{\fad(80,140)}{\c&H0000D7FF&}But, you still look like a bio-hazardoooo.
+Dialogue: 0,0:00:46.52,0:00:47.50,JP,,0,0,0,,{\pos(480,560)\fs46}{\fad(80,140)}{\c&H00FFFFFF&}直ちに是正せよ。
+Dialogue: 0,0:00:46.52,0:00:47.50,EN,,0,0,0,,{\pos(480,648)\fs31}{\fad(80,140)}{\c&H0000D7FF&}Fix it.
+Dialogue: 0,0:00:47.62,0:00:52.26,JP,,0,0,0,,{\pos(480,560)\fs46}{\fad(80,140)}{\c&H00FFFFFF&}起床の時刻である。
+Dialogue: 0,0:00:47.62,0:00:52.26,EN,,0,0,0,,{\pos(480,648)\fs31}{\fad(80,140)}{\c&H0000D7FF&}it is time, to wake, the fuck up,
+Dialogue: 0,0:00:52.38,0:00:58.66,JP,,0,0,0,,{\pos(480,560)\fs46}{\fad(80,140)}{\c&H00FFFFFF&}ありがとうございます。
+Dialogue: 0,0:00:52.38,0:00:58.66,EN,,0,0,0,,{\pos(480,648)\fs31}{\fad(80,140)}{\c&H0000D7FF&}ARIGATOADEMAS
+Dialogue: 0,0:00:58.78,0:01:02.58,JP,,0,0,0,,{\pos(480,560)\fs46}{\fad(80,140)}{\c&H00FFFFFF&}手順その一。開眼せよ。
+Dialogue: 0,0:00:58.78,0:01:02.58,EN,,0,0,0,,{\pos(480,648)\fs31}{\fad(80,140)}{\c&H0000D7FF&}Step 1 open your eyes
+Dialogue: 0,0:01:02.70,0:01:05.92,JP,,0,0,0,,{\pos(480,560)\fs46}{\fad(80,140)}{\c&H00FFFFFF&}手順その二。恥を吐き出せ。
+Dialogue: 0,0:01:02.70,0:01:05.92,EN,,0,0,0,,{\pos(480,648)\fs31}{\fad(80,140)}{\c&H0000D7FF&}step 2 exhale the shame
+Dialogue: 0,0:01:06.04,0:01:08.60,JP,,0,0,0,,{\pos(480,560)\fs46}{\fad(80,140)}{\c&H00FFFFFF&}手順その三。顔面を決めよ。
+Dialogue: 0,0:01:06.04,0:01:08.60,EN,,0,0,0,,{\pos(480,648)\fs31}{\fad(80,140)}{\c&H0000D7FF&}step 3 eserve face
+Dialogue: 0,0:01:08.72,0:01:18.20,JP,,0,0,0,,{\pos(480,560)\fs38}{\fad(80,140)}{\c&H00FFFFFF&}残存する脳細胞を舗道\Nに零さぬよう注意せよ。
+Dialogue: 0,0:01:08.72,0:01:18.20,EN,,0,0,0,,{\pos(480,648)\fs28}{\fad(80,140)}{\c&H0000D7FF&}be careful not to spill your\Nremaining braincells on the pavement
+Dialogue: 0,0:01:18.32,0:01:26.38,JP,,0,0,0,,{\pos(480,560)\fs46}{\fad(80,140)}{\c&H00FFFFFF&}姿勢、折畳椅子に相当。直ちに矯正せよ。
+Dialogue: 0,0:01:18.32,0:01:26.38,EN,,0,0,0,,{\pos(480,648)\fs28}{\fad(80,140)}{\c&H0000D7FF&}your posture is giving:\Nfoldable chair FIXIT. Bitch
+Dialogue: 0,0:01:26.50,0:01:31.72,JP,,0,0,0,,{\pos(480,560)\fs46}{\fad(80,140)}{\c&H00FFFFFF&}雰囲気、立退き通告に相当。
+Dialogue: 0,0:01:26.50,0:01:31.72,EN,,0,0,0,,{\pos(480,648)\fs31}{\fad(80,140)}{\c&H0000D7FF&}You’re Vibe is giving Eviction Notice.
+Dialogue: 0,0:01:31.84,0:01:34.90,JP,,0,0,0,,{\pos(480,560)\fs46}{\fad(120,650)}{\c&H00CC66FF&}穴を締めよ。{\c&H00FFA64D&}緩めよ{\c&H00CC66FF&}。
+Dialogue: 0,0:01:31.84,0:01:34.90,EN,,0,0,0,,{\pos(480,648)\fs31}{\fad(120,650)}{\c&H00CC66FF&}Clench your hole. {\c&H00FFA64D&}Release.
+Dialogue: 0,0:01:35.02,0:01:36.66,JP,,0,0,0,,{\pos(480,560)\fs46}{\fad(120,650)}{\c&H00CC66FF&}締めよ。{\c&H00FFA64D&}緩めよ{\c&H00CC66FF&}。
+Dialogue: 0,0:01:35.02,0:01:36.66,EN,,0,0,0,,{\pos(480,648)\fs31}{\fad(120,650)}{\c&H00CC66FF&}Clench. {\c&H00FFA64D&}Release.
+Dialogue: 0,0:01:36.78,0:01:39.60,JP,,0,0,0,,{\pos(480,560)\fs46}{\fad(120,650)}{\c&H00CC66FF&}穴を締めよ。{\c&H00FFA64D&}緩めよ{\c&H00CC66FF&}。
+Dialogue: 0,0:01:36.78,0:01:39.60,EN,,0,0,0,,{\pos(480,648)\fs31}{\fad(120,650)}{\c&H00CC66FF&}Cleancen ur hole, {\c&H00FFA64D&}RELEAASE,
+Dialogue: 0,0:01:39.72,0:01:42.46,JP,,0,0,0,,{\pos(480,560)\fs46}{\fad(120,650)}{\c&H00CC66FF&}締めよ。{\c&H00FFA64D&}緩めよ{\c&H00CC66FF&}。
+Dialogue: 0,0:01:39.72,0:01:42.46,EN,,0,0,0,,{\pos(480,648)\fs31}{\fad(120,650)}{\c&H00CC66FF&}Clench. {\c&H00FFA64D&}RELEASEEEE.
+Dialogue: 0,0:01:42.58,0:01:46.80,JP,,0,0,0,,{\pos(480,560)\fs46}{\fad(80,140)}{\c&H00FFFFFF&}日除眼鏡を探せ。装着せよ。
+Dialogue: 0,0:01:42.58,0:01:46.80,EN,,0,0,0,,{\pos(480,648)\fs31}{\fad(80,140)}{\c&H0000D7FF&}Find your sunglasses, put them on.
+Dialogue: 0,0:01:46.92,0:01:49.66,JP,,0,0,0,,{\pos(480,560)\fs46}{\fad(80,140)}{\c&H00FFFFFF&}屋内である。直ちに。
+Dialogue: 0,0:01:46.92,0:01:49.66,EN,,0,0,0,,{\pos(480,648)\fs31}{\fad(80,140)}{\c&H0000D7FF&}Indoors, RIGHT NOW.
+Dialogue: 0,0:01:49.78,0:01:54.48,JP,,0,0,0,,{\pos(480,560)\fs46}{\fad(80,140)}{\c&H00FFFFFF&}目下の隈を隠蔽せよ。
+Dialogue: 0,0:01:49.78,0:01:54.48,EN,,0,0,0,,{\pos(480,648)\fs31}{\fad(80,140)}{\c&H0000D7FF&}Hid those bags under your eyes
+Dialogue: 0,0:01:54.60,0:01:58.74,JP,,0,0,0,,{\pos(480,560)\fs46}{\fad(80,140)}{\c&H00FFFFFF&}貴官はデクバーグに在る。
+Dialogue: 0,0:01:54.60,0:01:58.74,EN,,0,0,0,,{\pos(480,648)\fs31}{\fad(80,140)}{\c&H0000D7FF&}you are at DEK-BURGGGGGGG
+Dialogue: 0,0:01:58.86,0:02:02.12,JP,,0,0,0,,{\pos(480,560)\fs46}{\fad(80,140)}{\c&H00FFFFFF&}昏睡状態ではない。
+Dialogue: 0,0:01:58.86,0:02:02.12,EN,,0,0,0,,{\pos(480,648)\fs31}{\fad(80,140)}{\c&H0000D7FF&}Not in a coma.
+Dialogue: 0,0:02:02.24,0:02:06.38,JP,,0,0,0,,{\pos(480,560)\fs46}{\fad(80,140)}{\c&H00FFFFFF&}低音部が貴官を呼んでいる。
+Dialogue: 0,0:02:02.24,0:02:06.38,EN,,0,0,0,,{\pos(480,648)\fs31}{\fad(80,140)}{\c&H0000D7FF&}The baseline is calling you
+Dialogue: 0,0:02:06.50,0:02:10.72,JP,,0,0,0,,{\pos(480,560)\fs46}{\fad(80,140)}{\c&H00FFFFFF&}興奮剤が貴官を待っている。
+Dialogue: 0,0:02:06.50,0:02:10.72,EN,,0,0,0,,{\pos(480,648)\fs31}{\fad(80,140)}{\c&H0000D7FF&}The poppers are waiting for you
+Dialogue: 0,0:02:10.84,0:02:17.14,JP,,0,0,0,,{\pos(480,560)\fs46}{\fad(80,140)}{\c&H00FFFFFF&}更に三秒この寝床に留まれば、
+Dialogue: 0,0:02:10.84,0:02:17.14,EN,,0,0,0,,{\pos(480,648)\fs28}{\fad(80,140)}{\c&H0000D7FF&}If you stay in this bed\Nfor three more seconds,
+Dialogue: 0,0:02:17.26,0:02:22.94,JP,,0,0,0,,{\pos(480,560)\fs46}{\fad(80,140)}{\c&H00FFFFFF&}銀行明細を父君へ流出させる。
+Dialogue: 0,0:02:17.26,0:02:22.94,EN,,0,0,0,,{\pos(480,648)\fs28}{\fad(80,140)}{\c&H0000D7FF&}I will leak your bank\Nstatement to your father.
+Dialogue: 0,0:02:23.06,0:02:25.30,JP,,0,0,0,,{\pos(480,560)\fs46}{\fad(80,140)}{\c&H00FFFFFF&}腕を伸ばせ。
+Dialogue: 0,0:02:23.06,0:02:25.30,EN,,0,0,0,,{\pos(480,648)\fs31}{\fad(80,140)}{\c&H0000D7FF&}Stretch your arms.
+Dialogue: 0,0:02:25.42,0:02:27.16,JP,,0,0,0,,{\pos(480,560)\fs46}{\fad(80,140)}{\c&H00FFFFFF&}脚を伸ばせ。
+Dialogue: 0,0:02:25.42,0:02:27.16,EN,,0,0,0,,{\pos(480,648)\fs31}{\fad(80,140)}{\c&H0000D7FF&}stretch your legs.
+Dialogue: 0,0:02:27.28,0:02:28.88,JP,,0,0,0,,{\pos(480,560)\fs46}{\fad(80,140)}{\c&H00FFFFFF&}穴を伸ばせ。
+Dialogue: 0,0:02:27.28,0:02:28.88,EN,,0,0,0,,{\pos(480,648)\fs31}{\fad(80,140)}{\c&H0000D7FF&}stretch your hole.
+Dialogue: 0,0:02:29.00,0:02:37.12,JP,,0,0,0,,{\pos(480,560)\fs46}{\fad(80,140)}{\c&H00FFFFFF&}本日デクバーグにて主役を務めるか。
+Dialogue: 0,0:02:29.00,0:02:37.12,EN,,0,0,0,,{\pos(480,648)\fs28}{\fad(80,140)}{\c&H0000D7FF&}Are you going to be a main\Ncharacter at dekburg, TODAY????
+Dialogue: 0,0:02:37.24,0:02:42.58,JP,,0,0,0,,{\pos(480,560)\fs46}{\fad(80,140)}{\c&H00FFFFFF&}衣装が戸棚で泣いている。
+Dialogue: 0,0:02:37.24,0:02:42.58,EN,,0,0,0,,{\pos(480,648)\fs31}{\fad(80,140)}{\c&H0000D7FF&}Your outfit is crying in the closet.
+Dialogue: 0,0:02:42.70,0:02:47.52,JP,,0,0,0,,{\pos(480,560)\fs46}{\fad(80,140)}{\c&H00FFFFFF&}五秒以内に起床せねば、
+Dialogue: 0,0:02:42.70,0:02:47.52,EN,,0,0,0,,{\pos(480,648)\fs31}{\fad(80,140)}{\c&H0000D7FF&}If you do not get up in five seconds,
+Dialogue: 0,0:02:47.64,0:02:49.98,JP,,0,0,0,,{\pos(480,560)\fs46}{\fad(80,140)}{\c&H00FFFFFF&}貴官の尻を犯す。
+Dialogue: 0,0:02:47.64,0:02:49.98,EN,,0,0,0,,{\pos(480,648)\fs31}{\fad(80,140)}{\c&H0000D7FF&}I will fuck your…. ASS!
+Dialogue: 0,0:02:50.10,0:02:53.98,JP,,0,0,0,,{\pos(480,560)\fs46}{\fad(80,140)}{\c&H00FFFFFF&}繰り返させるな。
+Dialogue: 0,0:02:50.10,0:02:53.98,EN,,0,0,0,,{\pos(480,648)\fs31}{\fad(80,140)}{\c&H0000D7FF&}Do not make me repeat myself.
+Dialogue: 0,0:02:54.10,0:02:59.72,JP,,0,0,0,,{\pos(480,560)\fs46}{\fad(80,140)}{\c&H00FFFFFF&}次の五秒以内に起立せねば、
+Dialogue: 0,0:02:54.10,0:02:59.72,EN,,0,0,0,,{\pos(480,648)\fs28}{\fad(80,140)}{\c&H0000D7FF&}If you do not stand up\Nin the next five seconds,
+Dialogue: 0,0:02:59.84,0:03:03.94,JP,,0,0,0,,{\pos(480,560)\fs46}{\fad(80,140)}{\c&H00FFFFFF&}元交際相手に未練を伝える。
+Dialogue: 0,0:02:59.84,0:03:03.94,EN,,0,0,0,,{\pos(480,648)\fs31}{\fad(80,140)}{\c&H0000D7FF&}I will text your ex that you miss them.
+Dialogue: 0,0:03:04.06,0:03:04.70,JP,,0,0,0,,{\pos(480,560)\fs46}{\fad(80,140)}{\c&H00FFFFFF&}五。
+Dialogue: 0,0:03:04.06,0:03:04.70,EN,,0,0,0,,{\pos(480,648)\fs31}{\fad(80,140)}{\c&H0000D7FF&}5
+Dialogue: 0,0:03:04.82,0:03:05.48,JP,,0,0,0,,{\pos(480,560)\fs46}{\fad(80,140)}{\c&H00FFFFFF&}四。
+Dialogue: 0,0:03:04.82,0:03:05.48,EN,,0,0,0,,{\pos(480,648)\fs31}{\fad(80,140)}{\c&H0000D7FF&}4
+Dialogue: 0,0:03:05.60,0:03:06.10,JP,,0,0,0,,{\pos(480,560)\fs46}{\fad(80,140)}{\c&H00FFFFFF&}三。
+Dialogue: 0,0:03:05.60,0:03:06.10,EN,,0,0,0,,{\pos(480,648)\fs31}{\fad(80,140)}{\c&H0000D7FF&}3
+Dialogue: 0,0:03:06.12,0:03:06.92,JP,,0,0,0,,{\pos(480,560)\fs46}{\fad(80,140)}{\c&H00FFFFFF&}二。
+Dialogue: 0,0:03:06.12,0:03:06.92,EN,,0,0,0,,{\pos(480,648)\fs31}{\fad(80,140)}{\c&H0000D7FF&}2
+Dialogue: 0,0:03:07.04,0:03:07.86,JP,,0,0,0,,{\pos(480,560)\fs46}{\fad(80,140)}{\c&H00FFFFFF&}一。
+Dialogue: 0,0:03:07.04,0:03:07.86,EN,,0,0,0,,{\pos(480,648)\fs31}{\fad(80,140)}{\c&H0000D7FF&}11111111
+Dialogue: 0,0:03:07.98,0:03:12.36,JP,,0,0,0,,{\pos(480,560)\fs46}{\fad(80,140)}{\c&H00FFFFFF&}起立せよ。全開にせよ。そして決めよ。
+Dialogue: 0,0:03:07.98,0:03:12.36,EN,,0,0,0,,{\pos(480,648)\fs31}{\fad(80,140)}{\c&H0000D7FF&}Get up, turn up , and Serve Cunt-o
+Dialogue: 0,0:03:12.48,0:03:13.74,JP,,0,0,0,,{\pos(480,560)\fs46}{\fad(80,140)}{\c&H00FFFFFF&}デクバーグ。
+Dialogue: 0,0:03:12.48,0:03:13.74,EN,,0,0,0,,{\pos(480,648)\fs31}{\fad(80,140)}{\c&H0000D7FF&}DekBURGGGG
+Dialogue: 0,0:03:13.86,0:03:14.82,JP,,0,0,0,,{\pos(480,560)\fs46}{\fad(80,140)}{\c&H00FFFFFF&}デクバーグ。
+Dialogue: 0,0:03:13.86,0:03:14.82,EN,,0,0,0,,{\pos(480,648)\fs31}{\fad(80,140)}{\c&H0000D7FF&}DekBURGHHGGG
+Dialogue: 0,0:03:14.94,0:03:16.04,JP,,0,0,0,,{\pos(480,560)\fs46}{\fad(80,140)}{\c&H00FFFFFF&}デクバーグ。
+Dialogue: 0,0:03:14.94,0:03:16.04,EN,,0,0,0,,{\pos(480,648)\fs31}{\fad(80,140)}{\c&H0000D7FF&}DekBURGGGG
+Dialogue: 0,0:03:16.16,0:03:18.96,JP,,0,0,0,,{\pos(480,560)\fs46}{\fad(80,140)}{\c&H00FFFFFF&}ありがとうございます。
+Dialogue: 0,0:03:16.16,0:03:18.96,EN,,0,0,0,,{\pos(480,648)\fs31}{\fad(80,140)}{\c&H0000D7FF&}ARIGATOADEMASE
+Dialogue: 0,0:03:19.08,0:03:18.05,JP,,0,0,0,,{\pos(480,560)\fs46}{\fad(80,140)}{\c&H00FFFFFF&}デクバーグ。
+Dialogue: 0,0:03:19.08,0:03:18.05,EN,,0,0,0,,{\pos(480,648)\fs31}{\fad(80,140)}{\c&H0000D7FF&}DEKBURGHU~!~!~!~!~~#!@$#@
+Dialogue: 0,0:03:18.20,0:03:22.40,JP,,0,0,0,,{\pos(480,560)\fs46}{\fad(80,140)}{\c&H00FFFFFF&}決めよ。さもなくば死ね。
+Dialogue: 0,0:03:18.20,0:03:22.40,EN,,0,0,0,,{\pos(480,648)\fs31}{\fad(80,140)}{\c&H0000D7FF&}SERVE CUNT OR DIE.
