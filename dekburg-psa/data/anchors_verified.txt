@@ -1,0 +1,18 @@
+# Line starts checked by eye against the separated vocal (pipeline/sync_strips.py) and
+# re-transcribed in short windows where the automatic pass was unsure. Session 2.
+# Format: line = seconds. Voiced-segment onsets minus 0.05s, so captions lead the voice slightly.
+1 = 11.92
+7 = 30.91
+8 = 35.99
+13 = 58.85
+14 = 62.70
+31 = 126.66
+47 = 175.11
+48 = 181.68
+49 = 184.99
+50 = 187.32
+51 = 190.85
+52 = 196.42
+53 = 199.99
+# Line 13 ends before the untranscribed Japanese phrase (61.51-62.31s), which stays uncaptioned.
+13 end = 61.45

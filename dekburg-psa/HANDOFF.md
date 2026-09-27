@@ -3,55 +3,49 @@
 Bilingual (JP/EN) subtitled music video. A custom audio track is laid over stock
 footage so the on-screen woman reads as the one delivering the announcement.
 
-**Status: delivered v3, but SUBTITLE TIMING IS STILL WRONG. That is the only open problem.**
-**Update (session 2): an automatic aligner now exists and is tested; it is waiting on the
-source media, which is not in git and must be re-uploaded (§5).**
+**Status (session 2): v4 delivered. Subtitle timing re-derived from the vocal and checked
+line by line; shot cuts moved with it; unintentional spelling errors fixed.**
 
 ---
 
-## 1. The one open problem
+## 1. Timing — how it was fixed (session 2)
 
-Captions do not line up with the vocal. Three rounds have failed to fix it.
+**What was wrong with v3.** It spread the lines evenly between two endpoints, but the song
+does not pace itself evenly. Captions were 1–5 s off through ~1:40, then drifted to
+**22 s late** by line 41 (the countdown sat at 3:04; it is really at 2:43). The "verified"
+first-word anchor was also wrong: **10.92 s is silence; the first word is at 11.92 s**
+(the 7.9–10.2 s sound is an instrumental sweep, not speech).
 
-The root cause was that **no one in the loop could verify the timing automatically**:
-Whisper was blocked (huggingface.co refuses) and every classical method in §4 failed on
-this material.
+**How the v4 timing was made.** huggingface.co is blocked here, but GitHub release assets
+are not, and k2-fsa/sherpa-onnx republishes the models there (`pipeline/fetch_models.sh`).
 
-### What changed in session 2
+1. `pipeline/auto_align.py` separates the vocal (UVR-MDX-NET-Voc_FT), transcribes it
+   with token timestamps (Parakeet-TDT 0.6B), aligns the transcript to the script at the
+   character level, fills unheard lines by syllables, and snaps every start to the nearest
+   voice onset minus 0.05 s. `pipeline/synth_test.py` checks it against a synthetic track
+   with known timing (median 0.09 s, max 0.12 s).
+2. `pipeline/sync_strips.py` draws the vocal with every line start on it. Every line was
+   checked by eye. 13 starts (and one end) the automatic pass got wrong were fixed by hand
+   from the voice onsets, and are in `data/anchors_verified.txt` (fed back via `--anchors`).
+   Line 14 was confirmed by re-transcribing 58–67 s in short windows.
+3. `pipeline/retime_edl.py` maps the v3 cut list (`data/edl_v3.tsv`, laid out on
+   `data/cues_v3.json`) onto the new line starts: 33 of 40 talking-shot cuts land on a
+   line start, the other 7 keep their relative place, and the title card ends at 11.92 s.
 
-huggingface.co is still blocked, but **GitHub release assets are allowed**, and
-k2-fsa/sherpa-onnx republishes the models needed there. `pipeline/auto_align.py` now does:
+**Limits.** SenseVoice, meant as the second recogniser, hears this accented voice as
+Japanese (katakana) and returns almost nothing, so most lines are confirmed by one
+recogniser plus the by-eye check, not two recognisers. A second English model
+(`sherpa-onnx-zipformer-gigaspeech-2023-12-12`, same release page) is the natural next
+cross-check if anything is disputed.
 
-1. UVR-MDX-NET-Voc_FT vocal separation (removes the music bed),
-2. two independent recognisers with token timestamps on the vocal stem
-   (Parakeet-TDT 0.6B and SenseVoice),
-3. character-level alignment of each transcript to the script, so misheard words
-   ("deck berg" vs `dekburg`) still anchor,
-4. an order-preserving merge of the two, then syllable interpolation + snap-to-vocal-onset
-   for any line neither recogniser caught. Hand-timed anchors (`12 = 1:03.4`) override all.
+To reproduce v4 from the source media:
 
-Each line gets a status: `both` (two recognisers agree within 0.35s — verified),
-`one`, `disagree`, `interp`, or `anchor`.
-
-**Tested on a synthetic track** (TTS reading all 53 lines at known times over a club bed,
-vocal 6.6dB under the music): every line start within 0.22s of truth, median 0.10s;
-45–47/53 lines `both`. Re-run with `python3 pipeline/synth_test.py` after any change. The real vocal (accented, over real music) will be harder — the
-status column says which lines to eyeball.
-
-### Do this next
-
-1. Get `src_audio.mp3` (and `src_video.mp4` for the render) re-uploaded. Nothing below runs without them.
-2. `pip install sherpa-onnx soundfile numpy && pipeline/fetch_models.sh` (~1GB, ~1 min)
-3. `python3 pipeline/auto_align.py src_audio.mp3` → read the table; check that line 1 lands
-   near the verified **10.92s** and the last line ends near **201.85s** (§2).
-4. `python3 pipeline/sync_strips.py --old data/cues.json` draws the vocal stem with every
-   new line start (red) and the old cue times (dashed) in `work/strips/`. Look at every
-   line not marked `both`. If any are wrong, put `N = m:ss.s` lines in an anchor file
-   and re-run with `--anchors FILE`.
-5. `--write-cues` → `data/cues.json`, then `pipeline/build_base.sh` and `pipeline/render.sh` (§6).
-
-The anchor-list route (`data/anchor_list.txt`, user supplies 12 starred starts) still works
-through `--anchors`, but is no longer required.
+```bash
+pipeline/fetch_models.sh
+python3 pipeline/auto_align.py src_audio.mp3 --work work/real --anchors data/anchors_verified.txt --write-cues
+python3 pipeline/retime_edl.py
+pipeline/build_base.sh && pipeline/render.sh DEKBURG_PSA_v4.mp4
+```
 
 ## 2. What is already correct — do not redo
 
@@ -60,10 +54,10 @@ through `--anchors`, but is no longer required.
   visible only 0–58s at roughly x0..150, y0..55; a permanent station bug covers it.
 - **Frame design.** 960x720. Video 960x508 on top, 212px subtitle plate below.
   JP line white at y=560, EN line gold at y=648, both `\an5` positioned.
-- **Verified time anchors** (forced alignment, two independent windows agreeing):
-  - First word starts **10.92s**. The track opens with ~11s of instrumental.
-  - Last word ends **201.85s** (track is 202.92s).
-- **The intro.** PSA title card holds over the full instrumental (0–10.9s) backed by
+- **Time anchors (session 2, from the separated vocal).** First word starts **11.92 s**
+  (not 10.92). Last word ends **~202.1 s** (track is 202.92 s). All 53 line starts are in
+  `data/cues.json`; the hand-checked ones are in `data/anchors_verified.txt`.
+- **The intro.** PSA title card holds over the full instrumental (0–11.92 s) backed by
   non-talking footage, then hard-cuts to her talking on the first word. This is
   deliberate and the user confirmed the problem it solved — keep it.
 - **Captions: user's wording, spelling slips fixed.** The user first said *"caption as i
@@ -83,7 +77,7 @@ through `--anchors`, but is no longer required.
 | Aspect | 4:3, 960x720 (9:16 offered, not requested) |
 | JP tone | Deadpan military formal |
 | EN captions | As written by the user; unintentional spelling errors corrected |
-| Intro | PSA card over instrumental, cut to her on first word |
+| Intro | PSA card over instrumental (0–11.92 s), cut to her on first word |
 | Station bug | Opaque, top-left, covers watermark |
 
 ### Special cue styling — clench/release
@@ -128,6 +122,7 @@ Media is NOT in git (too large). Source files came from the user and must be re-
 Put them in `dekburg-psa/` (git-ignored). Derived, regenerate if missing:
 
 - `base508.mp4` — the assembled 960x508 cut, 42 shots, no subtitles: `pipeline/build_base.sh`
+  (reads `data/edl.tsv`, which `pipeline/retime_edl.py` writes)
 - `models/` — alignment models: `pipeline/fetch_models.sh`
 - `work/` — `auto_align.py` cache: separated `vocals.wav`, recogniser tokens, `align_report.json`
 - `voc16k.wav` — old forced-alignment input (§4 only):
@@ -142,7 +137,9 @@ Run everything from `dekburg-psa/`.
 
 ```bash
 pipeline/build_base.sh                        # src_video.mp4 + data/edl.tsv -> base508.mp4 (~30s)
-python3 pipeline/auto_align.py src_audio.mp3 --write-cues   # -> data/cues.json (~3 min first run)
+python3 pipeline/auto_align.py src_audio.mp3 --anchors data/anchors_verified.txt --write-cues
+                                              # -> data/cues.json (~3 min first run)
+python3 pipeline/retime_edl.py                # cuts follow the line starts -> data/edl.tsv
 pipeline/render.sh out.mp4                    # cues -> data/final.ass -> 2-pass render, fits 30MB (~1 min)
 pipeline/render.sh --sync SYNC_REFERENCE.mp4  # big running timecode + captions, for checking sync
 ```
@@ -166,11 +163,9 @@ wrong** — drive rendering from `data/cues.json`, not from it.
 
 ## 8. Open questions for the user
 
-1. **Re-upload `src_audio.mp3` and `src_video.mp4`.** Everything is blocked on this.
-   The 12 hand-timed anchors (§1) are now optional — only for lines the aligner flags.
-2. There is untranscribed Japanese after `Step 1 open your eyes` that the user said they
-   could not make out. Currently left with no caption rather than inventing text.
-   SenseVoice understands Japanese and could offer a guess for the user to accept or reject.
-3. A 9:16 vertical cut was offered and not taken up; the pipeline supports it.
-4. The shot cuts in `data/edl.tsv` were placed on the v3 (wrong) line starts. Once the
-   timing is fixed, the cuts can be moved to the corrected line starts if the user wants.
+1. The Japanese phrase after `Step 1 open your eyes` (61.5–62.3 s) is still uncaptioned.
+   The recognisers hear it as "Osobusema" / ボスオブセム; neither is trustworthy, so no
+   text was invented. Line 13's caption ends before it (`13 end = 61.45`).
+2. A 9:16 vertical cut was offered and not taken up; the pipeline supports it.
+3. The source media was handed between sessions through a private artifact in the user's
+   gallery ("Dekburg Media Drop"). Delete it only if the user asks.

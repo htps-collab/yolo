@@ -54,7 +54,7 @@ def main():
     vmax = np.percentile(db, 99.5); vmin = vmax - 60
     out = os.path.join(a.work, "strips"); os.makedirs(out, exist_ok=True)
     total = len(x) / sr; k = 0; t0 = 0.0
-    plt.rcParams.update({"font.family": "DejaVu Sans", "font.size": 9})
+    plt.rcParams.update({"font.family": ["DejaVu Sans", "IPAGothic"], "font.size": 9})
     while t0 < total - 1:
         t1 = min(t0 + a.span, total)
         fig, (ax, lane) = plt.subplots(2, 1, figsize=(20, 5.2), dpi=100, sharex=True,

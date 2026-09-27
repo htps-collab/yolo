@@ -11,7 +11,9 @@
 4. A line's start comes from its first confidently matched characters. Hand-timed
    anchors ("12 = 1:03.4" lines in the anchor file) override everything. Lines nobody
    could hear are interpolated by syllable count between their neighbours, then snapped
-   to the nearest vocal onset. Two recognisers agreeing is the verification.
+   to the nearest vocal onset. Finally every start that is not hand-timed moves to the
+   nearest voice onset within -0.25/+0.2s, minus 0.05s, so captions lead the voice.
+   Two recognisers agreeing is the verification.
 
 Writes WORK/align_report.json and, with --write-cues, data/cues.json.
 Models are fetched from the k2-fsa/sherpa-onnx GitHub releases (see HANDOFF.md).
@@ -170,15 +172,43 @@ def line_times(lines, rec_chars, cps_hint=11.0):
         res.append({"start": round(s, 2), "end": round(e, 2), "conf": round(conf, 2)})
     return res
 
-def vocal_onsets(v16, sr=16000, hop=160):
-    """Times where the vocal stem comes back after >=150ms of near-silence."""
+def voiced_segments(v16, sr=16000, hop=160):
+    """(start, end) of each voiced stretch in the vocal stem: 10ms frames above the
+    60th-percentile level minus 12dB, gaps under 80ms bridged, blips under 80ms dropped."""
     n = len(v16) // hop
     e = np.sqrt(np.mean(v16[:n * hop].reshape(n, hop) ** 2, 1) + 1e-12)
     db = 20 * np.log10(np.convolve(e, np.ones(3) / 3, "same") + 1e-9)
     on = db > np.percentile(db, 60) - 12
-    quiet = np.convolve(~on, np.ones(15), "full")[:n] >= 15   # 15 frames = 150ms before
-    idx = np.flatnonzero(on[1:] & ~on[:-1] & quiet[:-1]) + 1
-    return idx * hop / sr
+    segs, i = [], 0
+    while i < n:
+        if on[i]:
+            j = i
+            while j < n and (on[j] or on[j:j + 8].any()):
+                j += 1
+            if j - i >= 8:
+                segs.append((i * hop / sr, j * hop / sr))
+            i = j
+        else:
+            i += 1
+    return segs
+
+def vocal_onsets(v16, sr=16000):
+    return np.array([a for a, _ in voiced_segments(v16, sr)])
+
+def snap_to_onsets(starts, keep, onsets, back=0.25, fwd=0.2, lead=0.05):
+    """Move each start (except hand-timed ones) to the nearest voice onset within
+    [-back, +fwd] s, minus a small lead so the caption appears just before the voice.
+    Recogniser timestamps lag a soft attack; interpolated starts land near, not on, it."""
+    out = list(starts)
+    for i, t in enumerate(starts):
+        if i in keep:
+            continue
+        lo = max(t - back, out[i - 1] + 0.3 if i else 0.0)
+        hi = min(t + fwd, starts[i + 1] - 0.3) if i + 1 < len(starts) else t + fwd
+        c = onsets[(onsets >= lo) & (onsets <= hi)]
+        if len(c):
+            out[i] = round(float(c[np.argmin(np.abs(c - t))]) - lead, 2)
+    return out
 
 def fill_gaps(lines, fixed, t_end, onsets=None, snap=0.8):
     """fixed: {line_index: start}. Unheard lines are interpolated by syllable count between
@@ -230,17 +260,22 @@ def combine(runs, min_step=0.25):
 # ---------------------------------------------------------------- main
 
 def read_anchors(path):
-    """'12 = 1:03.4' or '12 = 63.4' lines -> {11: 63.4} (0-based line index)."""
-    out = {}
+    """'12 = 1:03.4' / '12 = 63.4' lines -> {11: 63.4} (0-based line index);
+    '12 end = 65.0' lines set a caption's end instead, under the key "end"."""
+    out, ends = {}, {}
     for ln in open(path, encoding="utf-8"):
-        m = re.match(r"\s*(\d+)\s*=\s*(?:(\d+):)?(\d+(?:\.\d+)?)\s*$", ln)
+        m = re.match(r"\s*(\d+)\s*(end)?\s*=\s*(?:(\d+):)?(\d+(?:\.\d+)?)\s*$", ln)
         if m:
-            out[int(m.group(1)) - 1] = int(m.group(2) or 0) * 60 + float(m.group(3))
+            t = int(m.group(3) or 0) * 60 + float(m.group(4))
+            (ends if m.group(2) else out)[int(m.group(1)) - 1] = t
+    if ends:
+        out["end"] = ends
     return out
 
 def run(src, work, models, write_cues=False, anchors=None):
     os.makedirs(work, exist_ok=True)
-    anchors = anchors or {}
+    anchors = dict(anchors or {})
+    end_fix = anchors.pop("end", {})
     lines = json.load(open(os.path.join(DATA, "official_lines.json"), encoding="utf-8"))
     voc = separate(src, work, models)
     v16 = load(voc, 16000, 1)[0]
@@ -262,7 +297,9 @@ def run(src, work, models, write_cues=False, anchors=None):
     comb = combine(runs)
     report["combined"] = comb
     fixed = {i: c["start"] for i, c in enumerate(comb) if c["start"] is not None}
-    starts = fill_gaps(lines, fixed, t_end, vocal_onsets(v16))
+    onsets = vocal_onsets(v16)
+    starts = fill_gaps(lines, fixed, t_end, onsets)
+    starts = snap_to_onsets(starts, set(anchors), onsets)
     status = []
     for i, c in enumerate(comb):
         if i in anchors: status.append("anchor")
@@ -273,17 +310,27 @@ def run(src, work, models, write_cues=False, anchors=None):
     report["status"] = status
     json.dump(report, open(os.path.join(work, "align_report.json"), "w"), indent=1)
     if write_cues:
-        write_cue_file(lines, starts, comb, t_end)
+        write_cue_file(lines, starts, comb, t_end, voiced_segments(v16), end_fix)
     return report
 
-def write_cue_file(lines, starts, comb, t_end, hold=0.4, bridge=0.7):
+def write_cue_file(lines, starts, comb, t_end, segs=(), end_fix=None, hold=0.4, bridge=0.7):
+    """End each caption when its voice ends (last voiced stretch before the next line)
+    plus a short hold; bridge short gaps so captions do not blink; never overlap."""
     cues = []
     for i, (cap, _, jp) in enumerate(lines):
         nxt = starts[i + 1] if i + 1 < len(starts) else t_end + 0.12
-        e = comb[i]["end"] + hold if comb[i]["end"] is not None else nxt
+        mine = [b for a, b in segs if starts[i] - 0.1 <= a < nxt - 0.1]
+        if mine:
+            e = min(max(mine), nxt) + hold
+        elif comb[i]["end"] is not None:
+            e = comb[i]["end"] + hold
+        else:
+            e = nxt
         if nxt - e < bridge:
             e = nxt                                  # no blink between close lines
         e = min(max(e, starts[i] + 1.0), nxt - 0.12)  # readable, never overlapping
+        if end_fix and i in end_fix:
+            e = min(end_fix[i], nxt - 0.12)
         cues.append({"cap": cap, "jp": jp, "start": round(starts[i], 2), "end": round(e, 2)})
     json.dump(cues, open(os.path.join(DATA, "cues.json"), "w", encoding="utf-8"),
               ensure_ascii=False, indent=0)
