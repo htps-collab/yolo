@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
-import json,re
-D="/tmp/claude-0/-home-user-yolo/a7ab82fc-862c-58df-9672-3ae93c7fe1cc/scratchpad"
+import json,re,os
+D=os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))),"data")
 PINK="&H00CC66FF&"; BLUE="&H00FFA64D&"; GOLD="&H0000D7FF&"; WHITE="&H00FFFFFF&"
 REL=r"rele+a*se+"
 def esc(t): return t.replace("\\","").replace("{","(").replace("}",")")

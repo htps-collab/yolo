@@ -5,3 +5,6 @@
 *.npy
 *.jpg
 *.png
+__pycache__/
+models/
+work/
