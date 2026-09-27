@@ -64,10 +64,13 @@ through `--anchors`, but is no longer required.
 - **The intro.** PSA title card holds over the full instrumental (0–10.9s) backed by
   non-talking footage, then hard-cuts to her talking on the first word. This is
   deliberate and the user confirmed the problem it solved — keep it.
-- **Captions are verbatim.** The user explicitly overrode an earlier instruction to fix
-  spelling/punctuation: *"caption as i wrote"*. Keep every elongation, capitalisation and
-  misspelling exactly (`Cleancen ur hole`, `You're Vibe`, `eserve face`, `Hid those bags`,
-  `DEKBURGHU~!~!~!~!~~#!@$#@`). Do not tidy these.
+- **Captions: user's wording, spelling slips fixed.** The user first said *"caption as i
+  wrote"*, then (session 2) *"correct unintentional spelling errors in script"*. Fixed:
+  `eserve`→`serve`, `braincells`→`brain cells`, `FIXIT`→`FIX IT`, `You're Vibe`→`Your Vibe`,
+  `Cleancen`→`Clench`, `Hid`→`Hide`, `baseline`→`bassline`, `turn up ,`→`turn up,`.
+  Deliberate styling stays exactly as written: elongations (`ewwwww`, `bio-hazardoooo`,
+  `RELEAASE`, `RELEASEEEE`, `DEK-BURGGGGGGG`, `11111111`), `WHORE-I-Zontal`, `Cunt-o`,
+  `ARIGATOADEMAS(E)`, `ur`, capitalisation, and `DEKBURGHU~!~!~!~!~~#!@$#@`.
 - **Japanese register.** Deadpan military/formal, chosen by the user over matching the
   crude English. Translations for all 53 lines are in `data/official_lines.json`.
 
@@ -77,7 +80,7 @@ through `--anchors`, but is no longer required.
 |---|---|
 | Aspect | 4:3, 960x720 (9:16 offered, not requested) |
 | JP tone | Deadpan military formal |
-| EN captions | Verbatim as written by the user |
+| EN captions | As written by the user; unintentional spelling errors corrected |
 | Intro | PSA card over instrumental, cut to her on first word |
 | Station bug | Opaque, top-left, covers watermark |
 
