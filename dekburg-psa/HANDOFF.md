@@ -44,8 +44,10 @@ status column says which lines to eyeball.
 2. `pip install sherpa-onnx soundfile numpy && pipeline/fetch_models.sh` (~1GB, ~1 min)
 3. `python3 pipeline/auto_align.py src_audio.mp3` → read the table; check that line 1 lands
    near the verified **10.92s** and the last line ends near **201.85s** (§2).
-4. Eyeball every line not marked `both`. If any are wrong, put `N = m:ss.s` lines in an
-   anchor file and re-run with `--anchors FILE`.
+4. `python3 pipeline/sync_strips.py --old data/cues.json` draws the vocal stem with every
+   new line start (red) and the old cue times (dashed) in `work/strips/`. Look at every
+   line not marked `both`. If any are wrong, put `N = m:ss.s` lines in an anchor file
+   and re-run with `--anchors FILE`.
 5. `--write-cues` → `data/cues.json`, then `pipeline/build_base.sh` and `pipeline/render.sh` (§6).
 
 The anchor-list route (`data/anchor_list.txt`, user supplies 12 starred starts) still works
