@@ -30,8 +30,26 @@ All files are in `references/`.
 | Image 4 | `Bingo2.jpg` | `@Image4` | Full room layout, fresco, archway |
 
 **If only three image slots are available:** drop `bingo7.jpg`. Then
-`bingo8` = `@Image1`, `bingo5` = `@Image2`, `Bingo2` = `@Image3`, and edit
-the ROOM paragraph in the prompt to say `@Image2 and @Image3`.
+`bingo8` = `@Image1`, `bingo5` = `@Image2`, `Bingo2` = `@Image3`, and make
+all three of these edits to the prompt. Editing the ROOM paragraph alone
+is not enough: the opening paragraph would still name `@Image4`, which no
+longer exists, and PEOPLE would point at the room shot.
+
+1. Opening paragraph:
+   `shown in @Image1, @Image2, @Image3 and @Image4` →
+   `shown in @Image1, @Image2 and @Image3`
+2. ROOM:
+   `comes from @Image3 and @Image4. @Image3 shows this room` →
+   `comes from @Image2 and @Image3. @Image2 shows this room`, then
+   `@Image4 shows the full room layout` →
+   `@Image3 shows the full room layout`
+3. PEOPLE:
+   `the same guests shown in @Image1 and @Image2` →
+   `the same guests shown in @Image1`, and
+   `to those two images` → `to that image`
+
+Venice allows up to 9 reference images for this model (see Platform
+limits below), so this should only come up on another host.
 
 Set the aspect ratio dropdown to 9:16 in the Venice UI as well as in the
 prompt. The in-prompt lock is a fallback, not a replacement.
@@ -44,10 +62,34 @@ prompt. The in-prompt lock is a fallback, not a replacement.
   showing the tall arched windows and the rococo plasterwork on that wall.
   The roaming camera occupies that exact viewpoint. Without it the model
   has to invent that entire side of the room.
-- Images here are resized to 768px wide, 150–190 KB each. The video is
-  3.3s H.264, no audio, 663 KB. Earlier "failed to fetch" errors on Venice
-  were upload-weight problems — this whole set is smaller than one
-  original file.
+- Images here are resized to 768x1344, 159–195 KB each. The video is
+  3.3s H.264, 576x788 at 30fps, no audio, 663 KB. Earlier "failed to
+  fetch" errors on Venice were upload-weight problems — this whole set is
+  smaller than one original file.
+
+### Platform limits (checked 2026-09-29)
+
+Gathered from web search. docs.venice.ai itself could not be opened from
+the session that checked, so if Venice rejects an upload, trust its error
+message over this list.
+
+- **Reference slots:** Seedance 2.0 R2V on Venice takes up to 9 images
+  and 3 videos. The five-file manifest fits.
+- **Reference video:** 2–15s, 24–60fps, mp4 or mov, 300–6000px per side,
+  aspect ratio 0.4–2.5, under 50MB, and **at least 409,600 total pixels**
+  (640x640). `griddy_reference_clean.mp4` passes everything, but at
+  576x788 = 453,888 pixels it is only ~11% above that floor. **Do not
+  downscale it** to cure an upload error. If it has to get lighter, lower
+  the bitrate and keep the resolution. A replacement clip (see section 4)
+  must meet the same limits.
+- **Prompt length:** Venice says Seedance 2.0 accepts prompts up to 10,000
+  characters. This prompt is about 5,900. Most other hosts cap prompts at
+  3,000–3,500, so it will be cut short if the shot moves elsewhere.
+
+Sources: [Venice Seedance guide](https://docs.venice.ai/guides/media/seedance-2-0),
+[Venice on the 10K prompt limit](https://x.com/AskVenice/status/2054233561289355629),
+[fal Seedance 2.0 R2V](https://fal.ai/models/bytedance/seedance-2.0/reference-to-video),
+[Atlas Cloud Seedance 2.0 R2V](https://www.atlascloud.ai/models/bytedance/seedance-2.0/reference-to-video).
 
 ### `@Video1` means something different in this prompt
 
@@ -164,6 +206,10 @@ She does not fade out. She is still going when the clip ends.
 Audio: no music generated, no crowd noise, no chatter, no cheering, no
 ambient room sound. The only audio is the clean line-out signal from the
 DJ's mixer with no room acoustics.
+
+Vertical 9:16 aspect ratio, portrait orientation, tall vertical frame,
+taller than wide, do not output landscape, do not output 16:9, do not
+output square.
 ```
 
 ---
@@ -201,11 +247,21 @@ Cut the "a couple are filming the DJ on phones, one is filming a friend
 dancing badly, one is pushing toward the front" sentence. That is the most
 expendable specificity in the crowd block.
 
+**The DJ comes back in a wig or period costume**
+The costume rule in THE PEOPLE ("Everyone in every layer is in full period
+costume. No modern clothing, no bare heads") also covers the DJ, and the
+prompt never describes the DJ. In the reference images the DJ wears a
+black sweatshirt and tinted glasses, with no wig. If the shot catches the
+booth and the DJ has been costumed, add straight after that rule: "The DJ
+is the one exception: keep the DJ exactly as in @Image1 — black
+sweatshirt, tinted glasses, no wig."
+
 **The Griddy is still wrong**
 The hand gesture is weakly represented in the reference — the man does the
-eye-circles only briefly at the start, then switches to arm swings. If the
-hands are the problem, source a second reference clip where the eye-circle
-gesture is held throughout.
+eye-circles only briefly at the start (about 0.4–0.8s of the 3.3s clip),
+then switches to arm swings. If the hands are the problem, source a second
+reference clip where the eye-circle gesture is held throughout. It must
+meet the reference-video limits in section 2, including the pixel floor.
 
 **Generation is rejected before it starts**
 Historically this has been a Venice-side network issue, not a prompt
