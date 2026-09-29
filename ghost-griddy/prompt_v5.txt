@@ -1,0 +1,30 @@
+Vertical 9:16 portrait phone video, taller than wide. Not landscape, not 16:9, not square.
+
+Realistic iPhone footage. A person at a packed 1700s costume party holds an iPhone up at head height and films while walking through the crowd. One continuous 11-second take from their point of view, inside the crowd from the very first frame. Far in the background, a see-through ghost of an 18th-century woman barges straight through the dancers, stops, and starts hitting the Griddy, completely deadpan. Nobody notices her, including the person filming.
+
+REFERENCES
+@Image1 and @Image2 — the guests: faces, powdered wigs, gowns, coats, and the colour grade. Also the DJ and the painted ceiling.
+@Image3 — the room at head height: tall windows, rococo plasterwork, panelled walls.
+@Image4 — the Domino's delivery guy's look only: blue Domino's polo and cap, pizza boxes, delivery bag.
+@Video1 — the Griddy dance moves, for the ghost only. Take ONLY the body movement from @Video1. Do NOT copy its setting, lighting, clothing, camera movement or framing.
+No reference image is the first frame. Do not recreate the framing of any reference image.
+
+CAMERA: a real person walking through the party with an iPhone held up at head height, filming as they go: squeezing sideways between guests, turning to catch faces, pausing on a group for a second, then moving on. They walk across the room, never toward the back wall. The phone is always at head height, inside the crowd. Never above the guests' heads: no overhead view, no drone or crane move, no gimbal, no smooth glide, no push-in. The camera never passes through anyone and never goes behind the DJ booth. Wigs, shoulders and champagne flutes brush past the lens. Handheld shake from walking, small bumps, horizon a degree or two off.
+
+LOOK: cheap, realistic iPhone night footage: grainy and soft in the dark areas, smeared highlights, blown-out lights, slight motion blur when the phone moves. Not cinematic, not polished. Keep the colour grade of @Image1 exactly: warm champagne-and-gold crowd against cool purple walls, deep purple and magenta light, warm practical lights low in the room. Do not cool the crowd toward teal or navy, do not darken, do not re-grade. The phone lowers sharpness and adds noise; it does not change the colours.
+
+CROWD: the room is packed shoulder to shoulder, with no aisle, no open floor and nobody standing in rows. Everyone is dancing: bouncing, arms up, drinks raised, facing the DJ. Small groups laugh and shout to each other while dancing. The talking happens WHILE they dance, not instead of dancing. Everyone moves differently; no synchronised dancing. Every guest is a 1700s aristocrat in full period costume and a powdered wig. No modern clothing, no bare heads, no sunglasses, no generic extras. Nobody except the ghost does the Griddy.
+
+THE DJ from @Image1 plays at the far end of the room: black sweatshirt, tinted glasses, no wig.
+THE DELIVERY GUY from @Image4 stays in the background on the left for the whole clip, handing out pizza slices to a cluster of guests. The DJ and the delivery guy are the only two people in modern clothes.
+
+THE GHOST: the only see-through person in the room; everyone else is solid. She is a semi-transparent ghost of a woman in an 18th-century gown: the guests, walls and lights behind her are clearly visible through her body and gown, like a double exposure. Pale grey and drained of colour, under the same purple light as everyone else. No glow, no aura, no particles, no motion trails. She is never solid and never looks like a statue. She stays far away in the background on the right side of the room, full figure about a third of the frame height, and the camera never gets closer to her. She never looks at the camera.
+
+First she barges through the dancing crowd, walking straight through people's bodies as if they were not there, and they carry on dancing without noticing. Then she stops on one spot and hits the Griddy, matching the dance motion of @Video1: bouncing heel-tap steps, feet kicking forward in turn, her hem swinging up so her feet show, arms swinging low in rhythm, and repeatedly bringing both hands up to her eyes, making circles with thumb and index finger. Once she starts dancing, she does NOT travel; she stays on that spot. NOT breakdancing, NOT the running man, NOT the floss, NOT arms waving overhead. Her face stays completely deadpan; she never smiles.
+
+TIMING
+0-3s: the person filming weaves through dancing guests. Far in the background on the right, the ghost barges through the crowd, passing straight through two dancers.
+3-10s: she stops and hits the Griddy on one spot in the far background, in frame most of the time, sometimes hidden for a moment by guests passing close to the lens. The person filming keeps weaving and turning to faces, never toward her.
+10-11s: the camera turns away. She is still dancing when the clip ends.
+
+Vertical 9:16 portrait, taller than wide.
