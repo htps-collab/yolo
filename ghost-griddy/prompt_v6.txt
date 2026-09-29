@@ -1,0 +1,101 @@
+Vertical 9:16 aspect ratio, portrait orientation, tall vertical frame,
+taller than wide, do not output landscape, do not output 16:9, do not
+output square.
+
+This is a SECOND CAMERA at the same party shown in the reference images —
+a different operator, a different angle, the same room, the same night,
+the same people. Do not reproduce the framing of the reference images.
+
+CAMERA: low quality video taken on a cheap phone camera. flash video. one continuous handheld shot on a 18 mm wide lens at head
+height, held by an operator standing in among the guests. Ultra-wide look:
+barrel distortion, curved edges, deep focus, exaggerated depth. The
+operator moves the way a real person with a camera moves at a party — he
+holds on a group for a few seconds, drifts across to catch something else,
+takes a couple of casual steps, turns his shoulders to follow someone
+passing. Natural handheld: weight shifts, breathing drift, small framing
+corrections, a soft bump when someone brushes past. No gimbal glide, no
+tripod smoothness, no whip pans, no dramatic sweeping moves. Framing is
+slightly imperfect — not perfectly centred, horizon a degree or two off.
+One unbroken take, no cuts.
+
+THE ROOM comes from the reference images: the ornate 18th century mansion
+salon, baroque domed cherub fresco overhead, tall arched windows, pale
+panelled walls, deep purple and magenta lighting, warm practical lights low
+in the room. Keep the exact colour grade of the references — warm champagne
+and gold crowd against cooler purple walls. Do not cool the crowd toward
+teal or navy, do not darken the scene, do not re-grade.
+
+THE PEOPLE are the same guests from the references — 1700s aristocrats in
+powdered wigs, silk gowns, brocaded coats, lace fans and champagne flutes.
+Match their faces, wig styles and costume colours. Everyone in every layer
+is in full period costume. No modern clothing, no bare heads, no generic
+extras.
+
+THE VIBE: a packed Boiler Room where everyone is having a genuinely good
+time. The music is the centre of the room and people are into it.
+
+THE BALANCE, and this is the key instruction: most of the crowd is facing
+the DJ and moving to the music — dancing, bouncing on the beat, nodding
+hard, arms up, hips going, drinks raised, some with their eyes closed
+locked in, some grinning at the DJ. That is the default state of this room.
+Woven through that, smaller groups are talking and laughing while they
+dance — leaning in to shout something over the music without stopping
+moving, pulling back to laugh, clinking flutes mid-dance, grabbing a
+friend's arm and pointing at the DJ, mouthing lyrics at each other. The
+talking happens WHILE they dance, not instead of dancing. Nobody has
+turned their back on the music to have a full conversation. A couple of
+people are filming the DJ on their phones, one is filming a friend dancing
+badly, one is pushing gently through toward the front for a better view.
+
+Roughly: most of the frame is dancing and watching the DJ, and a smaller
+number are dancing and talking at the same time. Keep that ratio.
+
+Keep it natural, not theatrical. Nobody is posing, nobody is performing at
+the lens, nobody is doing anything exaggerated. A couple of people notice
+the camera and give it a quick grin or a raised glass before carrying on.
+Everyone else ignores it. Movement is loose, individual and human — no two
+people doing the same thing, no synchronised bobbing, no generic AI dance
+loops, nobody freezing or holding a pose.
+
+THE GHOST — one single additional figure, played completely straight: a
+semi-transparent ghost of a woman in an 18th century gown, somewhere in the
+background of the room. She is see-through — guests, walls and furniture
+behind her are clearly visible THROUGH her body and gown, like a double
+exposure. She is pale and drained of colour, grey and washed out, while
+everyone around her stays warm champagne and gold. She is never solid and
+never looks like a statue. She has NO glow, NO light emission, NO blue or
+white aura, NO particle effects, NO motion trail, NO digital VFX look. She
+is simply transparent, otherwise photographed exactly like everyone else
+under the same purple lighting.
+
+First she barges through the crowd in the background, walking straight
+through the dancers' bodies as if they were not there; they carry on
+dancing without noticing. Then she stops on one spot and starts hitting the
+Griddy exactly as demonstrated in @Video1: the bouncing heel-tap footwork,
+legs kicking forward in turn, her hem swinging up so her feet show, arms
+swinging low in rhythm, and both hands raised beside her eyes making
+circles with thumb and index finger. Take ONLY the dance movement from
+@Video1 — ignore everything else about that clip. Do NOT copy its setting,
+its lighting, its clothing, its camera movement or framing, or its bright
+indoor look. The dancer in @Video1 travels forward while dancing — once she
+starts the Griddy, she does NOT travel. She stays on that same patch of
+floor until the clip ends.
+
+This is specifically the Griddy from @Video1 — NOT breakdancing, NOT the
+running man, NOT the floss, NOT generic dancing, NOT arms waving overhead.
+She is the only one doing it; no guest copies the move.
+
+She does it fully committed and completely deadpan, with a neutral serene
+expression — she never smiles, never laughs, never looks at the camera.
+
+Absolutely nobody notices her — not the guests she walks through, not the
+DJ, not the operator. No one reacts, turns, points, stares or acknowledges
+her. The camera does not follow her, does not move toward her and does not
+centre her. She stays in the background, small in the frame and off to one
+side, sometimes partly hidden by guests passing in front of her. She is
+incidental background, never the subject. She does not fade out; she is
+still going when the clip ends.
+
+Audio: no music generated, no crowd noise, no chatter, no cheering, no
+ambient room sound. The only audio is the clean line-out signal from the
+DJ's mixer with no room acoustics.
