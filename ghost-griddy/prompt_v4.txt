@@ -1,0 +1,32 @@
+Vertical 9:16 portrait phone video, taller than wide. Not landscape, not 16:9, not square.
+
+One continuous 11-second video filmed on a cheap smartphone at the 1700s costume party shown in @Image1, @Image2, @Image3 and @Image4, from a new angle. In the background, a translucent, colourless woman in an 18th-century gown does the Griddy dance on the spot, completely deadpan, and nobody notices her.
+
+REFERENCES
+@Image1 and @Image2 — the guests: faces, powdered wigs, gowns, coats, and the colour grade.
+@Image3 — the room at head height: tall windows, rococo plasterwork, panelled walls.
+@Image4 — the room from above: domed cherub fresco, archway, DJ booth, and the Domino's delivery guy.
+@Video1 — the woman's dance only. Take ONLY the body movement from @Video1. Do NOT copy its setting, lighting, clothing, camera movement or framing.
+
+CAMERA: low-quality footage from a cheap smartphone's 0.5x ultra-wide camera, held at head height and moving slowly forward through the dancing crowd. Soft, smeary detail, visible digital noise in the dark purple areas, compression artefacts, blown-out highlights on the lights, slight motion blur and rolling-shutter wobble when the phone moves. Wide-angle distortion at the edges, everything in focus, wigs and champagne flutes passing close to the lens. Shaky handheld with small bumps, horizon slightly off. One unbroken take: no cuts, no whip pans, no smooth stabilised glide, no cinematic look, no shallow depth of field. Do not reproduce the framing of any reference image.
+
+ROOM AND LIGHT: build the space from @Image3 and @Image4. Deep purple and magenta light on the walls, warm practical lights low in the room. Keep the colour grade of @Image1 exactly: warm champagne-and-gold crowd against cool purple walls. Do not cool the crowd toward teal or navy, do not darken, do not re-grade. The cheap phone lowers sharpness and adds noise; it does not change the colours.
+
+CROWD: 1700s aristocrats in full period costume at every depth. No modern clothing, no bare heads, no generic extras. The only two people not in period costume are the DJ from @Image1 (black sweatshirt, tinted glasses, no wig) and the Domino's delivery guy from @Image4. Most guests face the DJ and dance hard: bouncing, arms up, drinks raised. Small groups laugh and shout to each other while dancing. The talking happens WHILE they dance, not instead of dancing. Everyone moves differently; no synchronised dancing.
+
+THE DELIVERY GUY: in the left background, the Domino's delivery guy from @Image4, in the blue Domino's polo and cap, with a stack of open pizza boxes and the red-and-blue delivery bag, hands out slices to guests crowding round, grinning. Solid and clearly visible, like everyone else.
+
+THE WOMAN: the only translucent person in the room; everyone else is solid. She stands on one spot of floor in front of the tall windows, to one side of the room. The windows and guests behind her show through her body and gown like a double exposure. She is pale grey and drained of colour, under the same purple light as everyone else. No glow, no aura, no particles, no motion trails.
+
+She does the Griddy, matching the dance motion of @Video1: bouncing heel-tap steps, feet kicking forward in turn, arms swinging low in rhythm, and repeatedly bringing both hands up to her eyes, making circles with thumb and index finger. The dancer in @Video1 travels forward; she does NOT travel. She stays on the same patch of floor for the whole clip. NOT breakdancing, NOT the running man, NOT the floss, NOT arms waving overhead. Her face stays completely deadpan and serene; she never smiles.
+
+Nobody notices her: not the guests, not the DJ, not the delivery guy. No one looks at her, turns, points or reacts. The camera never follows, pans to, or centres her; she is never in the centre third of the frame.
+
+TIMING
+0-3s: the camera pushes through dancing guests; the delivery guy is handing out pizza in the left background; she is not yet in view.
+3-9s: she is in the background in the right third of the frame, whole figure and feet visible between guests, doing the Griddy, while the camera keeps drifting forward past her. The delivery guy is still on the left, busy with the pizza.
+9-11s: she slides to the right edge of frame as the camera moves on. She is still dancing when the clip ends and never fades out.
+
+Audio: no music generated, no crowd noise, no chatter, no cheering, no ambient room sound. The only audio is the clean line-out signal from the DJ's mixer with no room acoustics.
+
+Vertical 9:16 portrait, taller than wide.
