@@ -1,4 +1,5 @@
 import { useEffect, useRef } from "react";
+import { decay } from "../heartbreak";
 
 interface Flake {
   x: number;
@@ -68,8 +69,14 @@ export function Snowfall({ density = 70 }: { density?: number }) {
       last = now;
 
       ctx.clearRect(0, 0, width, height);
-      for (const flake of flakes) {
-        flake.y += flake.speed * dt;
+      // as the page breaks the snow thins out, slows down and goes grey
+      const d = decay.get();
+      const falling = Math.round(flakes.length * (1 - 0.9 * d));
+      const pace = 1 - 0.6 * d;
+      const fade = 1 - 0.45 * d;
+      for (let i = 0; i < falling; i++) {
+        const flake = flakes[i];
+        flake.y += flake.speed * pace * dt;
         flake.phase += dt * 0.7;
         flake.x += Math.sin(flake.phase) * flake.drift * dt;
 
@@ -81,7 +88,7 @@ export function Snowfall({ density = 70 }: { density?: number }) {
         if (flake.x > width + 10) flake.x = -10;
 
         ctx.beginPath();
-        ctx.fillStyle = `rgba(245, 248, 252, ${flake.alpha})`;
+        ctx.fillStyle = `rgba(245, 248, 252, ${flake.alpha * fade})`;
         ctx.arc(flake.x, flake.y, flake.r, 0, Math.PI * 2);
         ctx.fill();
       }

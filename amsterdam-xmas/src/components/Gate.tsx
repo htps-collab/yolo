@@ -3,6 +3,7 @@ import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import confetti from "canvas-confetti";
 import { img, rollCall } from "../data/trip";
 import { armAutoplay, playMusic } from "../audio";
+import { markEntered } from "../heartbreak";
 import { Seal } from "./Seal";
 
 const STORAGE_KEY = "kerst-2027-opened";
@@ -64,7 +65,9 @@ export function Gate() {
     const opened = readOpened();
     setDone(opened);
     setMounted(true);
-    if (opened) return armAutoplay();
+    if (!opened) return;
+    markEntered();
+    return armAutoplay();
   }, []);
 
   useEffect(() => {
@@ -122,6 +125,7 @@ export function Gate() {
     }
     void playMusic();
     setDone(true);
+    markEntered();
   };
 
   if (!mounted) return null;

@@ -7,7 +7,30 @@ which was replaced entirely.
 **Live page:** https://claude.ai/artifact/7A8Yps1LdWR88f6Bdq4tVH (private Claude artifact, version 5).
 Only Max can open it until he shares it from the page's Share menu.
 
-## The trip being announced
+## Update: the family cancelled
+
+The trip is off. The page now turns after the intro:
+the seal, the roll call and "Amsterdam." still play exactly as before, then about two seconds after
+"Show us the plan" the screen takes its first crack, and everything below comes apart as you scroll.
+It ends on a letter from Max instead of the "I'm in" button. The invitation content is all still
+there, as what would have been.
+
+What happens on the way down (all driven by scroll depth, and it only gets worse: scrolling back
+up doesn't repair anything):
+
+- **Glass cracks** spread across the whole screen from seven impact points (fewer on phones).
+- **The page comes loose.** Headings, paragraphs, photos and whole sections sag, swing off one
+  corner or drop as they pass the top of the screen, on critically damped springs.
+- **Color drains** to grey and the edges darken. The film grain thickens.
+- **The Christmas lights** sputter out about a third of the way down and stay out.
+- **The snow** thins, slows and fades.
+- **The music** slows and drops in pitch (to about 0.6x), gets muffled and drowned in reverb, and
+  warbles near the end. The first crack comes with a glass ping and a stumble in the music.
+- **Between sections**, lines from Max, each one more broken than the last.
+- **At the letter**, the cracked glass falls out of the frame, the gold comes back, and the music
+  drops lower under "I love you. I will always love you. Max."
+
+## The trip that was being announced
 
 - Arrive Wed **Dec 22, 2027**, fly home Sun **Jan 2, 2028** (11 nights). Every weekday in the
   itinerary is computed for that year — if the dates move, fix `weekday` in `src/data/trip.ts` too.
@@ -29,10 +52,25 @@ npm run preview   # serve dist/ (opening dist/index.html directly will NOT work)
 
 ## Layout of the code
 
-`src/App.tsx` renders, in order: `Gate`, `Snowfall`, `Nav`, `MusicToggle`, then `Hero`, `Deal`,
-`GuestList`, `Stay`, `Dutch`, `Days`, `Scrapbook`, `Surprises`, `Closer`.
+`src/App.tsx` renders, in order: `Gate`, `Snowfall`, `Nav`, `MusicToggle`, `Heartbreak`, then `Hero`,
+`Deal`, `GuestList`, `Stay`, `Dutch`, `Days`, `Scrapbook`, `Surprises`, `Ending`, with an `Interlude`
+between each pair.
 
-- **`data/trip.ts`** — all content: arrival date, the intro roll call, the nine guest-list
+- **`heartbreak.ts`** — shared state for the breakdown: `decay` (0..1, spring-smoothed, never goes
+  down), `glow` (0..1 as the letter comes into view), `markEntered()` which the Gate calls, and
+  `damageAt()`, the curve from scroll depth to damage.
+- **`components/Heartbreak.tsx`** — one rAF loop that runs everything: generates the crack
+  pattern (`IMPACTS` sets where and when each impact lands), grows it, moves the loose pieces (any
+  `h2, h3, p, li, img, figure` and every `section` in `main`, via the CSS `translate`/`rotate`
+  properties so it never fights Motion's `transform`), drives the grey and dark overlays, and feeds
+  `setGrief()` in `audio.ts`. Anything inside `[data-intact]` (the interludes, the letter, the
+  footer) and the hero never falls.
+- **`components/Interlude.tsx`** — the lines between sections. Words blur in one at a time and
+  settle out of line; `level` sets how far.
+- **`components/Ending.tsx`** — Max's letter and the footer credits. Replaces `Closer.tsx`, and with
+  it the "I'm in" button and the packing list.
+
+- **`data/trip.ts`** — all content, including the `interludes` and the `ending` letter: arrival date, the intro roll call, the nine guest-list
   "houses" (lore + their personal Amsterdam pick), what Max handles, Dutch traditions, the
   twelve itinerary days, scrapbook captions, and `HERO_BG`. Edit copy here, not in components.
 - **`components/Gate.tsx`** — the surprise intro. Sealed screen -> `Seal` -> roll call where each
@@ -52,7 +90,10 @@ npm run preview   # serve dist/ (opening dist/index.html directly will NOT work)
 - **`audio.ts`** — one looping `<audio>`. Browsers block autoplay until a gesture, so the seal press
   starts it; on a revisit `armAutoplay()` starts it on first interaction. `setMusicLevel()` swells
   the volume while the seal is held. **iOS Safari ignores `volume`**, so on iPhone it just starts at
-  full level; don't spend time debugging that.
+  full level; don't spend time debugging that. The breakdown slows the element's `playbackRate` with
+  `preservesPitch` off, which works everywhere. The muffling and reverb go through a Web Audio graph
+  (`armGrief()`/`setGrief()`), which is only built on the first tap after the intro, since browsers
+  only allow audio contexts inside a tap. If a browser refuses, you still get the slowdown.
 
 ## Motion
 
@@ -111,5 +152,6 @@ The artifact is a plain static build, published as a page plus supporting files:
 
 ## If you change one thing, change it here
 
-Copy edits: `src/data/trip.ts`. Dates: `ARRIVAL` there, plus the boarding pass fields in
+Copy edits: `src/data/trip.ts` (Max's lines and letter are at the bottom). How fast things break:
+`damageAt()` in `heartbreak.ts`. How the music ends up: `setGrief()` in `audio.ts`. Dates: `ARRIVAL` there, plus the boarding pass fields in
 `Deal.tsx` and the date line in `Gate.tsx`. Colors and gables: `src/index.css` theme block.

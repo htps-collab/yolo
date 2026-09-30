@@ -360,3 +360,36 @@ export const HERO_BG = {
   alt: "The Reguliersgracht at night in December, every tree on the canal strung with lights and mirrored in the water",
   position: "50% 55%",
 };
+
+/**
+ * After the intro, the page turns. These lines sit between the sections, and
+ * each one lands a little more broken than the last (`level`, 0..1).
+ */
+export const interludes = {
+  afterHero: {
+    kicker: "A note, added later",
+    line: "I made all of this before you cancelled. I'm leaving it up anyway.",
+    level: 0.08,
+  },
+  afterDeal: { line: "All you had to do was book a flight.", level: 0.2 },
+  afterGuests: { line: "I gave every one of you a house on the canal. The lights are still on. Nobody's home.", level: 0.32 },
+  afterStay: { line: "I kept picturing which room each of you would pick.", level: 0.45 },
+  afterDutch: { line: "I learned every one of these so I could share them with you.", level: 0.56 },
+  afterDays: { line: "Twelve days, planned down to the hour. I don't know what to do with them now.", level: 0.68 },
+  afterScrapbook: { line: "Thirty years of photos. I only wanted one more.", level: 0.8 },
+  afterSurprises: { line: "I guess the surprise was on me.", level: 0.92 },
+};
+
+/** The letter at the bottom of the page. */
+export const ending = {
+  kicker: "Christmas 2027",
+  opening: "So. Nobody's coming.",
+  paragraphs: [
+    "I could pretend I'm fine. I'm not going to.",
+    "I didn't just book a trip. I found Dad a golf course that stays open in December. I found Sophie a court. I mapped out Dan's record shops, picked Meggo's brown cafe, checked the rink hours for the kids, found Sam a zoo with a planetarium. I put every one of you into this page, one photo at a time, and gave you each a house on the canal.",
+    "When you cancelled, it didn't feel like a change of plans. It felt like finding out I wanted this more than anyone else did. That's the part that hurts the most.",
+    "I'm not saying this to make you feel guilty. I'm saying it because you're my family, and you should know what it did to me.",
+  ],
+  love: ["I love you.", "I will always love you."],
+  signature: "Max",
+};
