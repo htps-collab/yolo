@@ -1,0 +1,188 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Cormorant Garamond", "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+  --font-sans: "Schibsted Grotesk", "Helvetica Neue", Arial, sans-serif;
+  --font-mono: "DM Mono", ui-monospace, "SF Mono", Menlo, monospace;
+
+  /* One December night on the canal ring: canal-water ink, candle paper, lamplight */
+  --color-night: #0d1417;
+  --color-night-2: #121c20;
+  --color-night-3: #19252a;
+  --color-ink: #f3ecdf;
+  --color-ink-soft: #b3ac9c;
+  --color-hairline: #26353b;
+  --color-lamp: #ecbd6c;
+  --color-lamp-deep: #b98a3e;
+  --color-holly: #a8362a;
+}
+
+html {
+  scroll-behavior: smooth;
+  background: var(--color-night);
+}
+
+body {
+  background-color: var(--color-night);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3 {
+  text-wrap: balance;
+}
+
+::selection {
+  background: var(--color-lamp);
+  color: var(--color-night);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-lamp);
+  outline-offset: 3px;
+}
+
+.rail {
+  scrollbar-width: none;
+}
+.rail::-webkit-scrollbar {
+  display: none;
+}
+
+/* Film grain on a fixed layer so it never repaints with scroll */
+.grain::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 70;
+  pointer-events: none;
+  opacity: 0.07;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* Cutouts sit in the scene: contact shadow and a faint lamplit rim instead of a box */
+.cutout {
+  filter: drop-shadow(0 18px 24px rgb(0 0 0 / 0.55)) drop-shadow(0 0 1px rgb(236 189 108 / 0.35));
+}
+
+/* Canal-house gables. Each house gets a real Amsterdam roofline. */
+.gable-step {
+  clip-path: polygon(0 16%, 12% 16%, 12% 11%, 24% 11%, 24% 6%, 37% 6%, 37% 0, 63% 0, 63% 6%, 76% 6%, 76% 11%, 88% 11%, 88% 16%, 100% 16%, 100% 100%, 0 100%);
+}
+.gable-neck {
+  clip-path: polygon(0 20%, 20% 20%, 27% 9%, 34% 9%, 34% 0, 66% 0, 66% 9%, 73% 9%, 80% 20%, 100% 20%, 100% 100%, 0 100%);
+}
+.gable-spout {
+  clip-path: polygon(0 18%, 50% 0, 100% 18%, 100% 100%, 0 100%);
+}
+.gable-bell {
+  clip-path: polygon(0 20%, 14% 19%, 22% 16%, 27% 11%, 31% 6%, 36% 2.5%, 43% 0.6%, 50% 0, 57% 0.6%, 64% 2.5%, 69% 6%, 73% 11%, 78% 16%, 86% 19%, 100% 20%, 100% 100%, 0 100%);
+}
+.gable-cornice {
+  clip-path: polygon(0 7%, 4% 4%, 96% 4%, 100% 7%, 100% 100%, 0 100%);
+}
+
+/* String-light bulbs: slow, uneven glow so it reads as filament, not strobe */
+@keyframes bulb-glow {
+  0%,
+  100% {
+    opacity: 1;
+    filter: drop-shadow(0 0 6px rgb(236 189 108 / 0.85));
+  }
+  50% {
+    opacity: 0.55;
+    filter: drop-shadow(0 0 2px rgb(236 189 108 / 0.35));
+  }
+}
+.bulb {
+  animation: bulb-glow 4.5s ease-in-out infinite;
+}
+
+@keyframes seal-pulse {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgb(236 189 108 / 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 20px rgb(236 189 108 / 0);
+  }
+}
+.seal-pulse {
+  animation: seal-pulse 2.8s ease-out infinite;
+}
+
+@keyframes eq {
+  0%,
+  100% {
+    transform: scaleY(0.3);
+  }
+  50% {
+    transform: scaleY(1);
+  }
+}
+.eq-bar {
+  transform-origin: bottom;
+  animation: eq 0.9s ease-in-out infinite;
+}
+
+@keyframes shimmer-water {
+  0%,
+  100% {
+    transform: translateX(0) scaleY(1);
+    opacity: 0.5;
+  }
+  50% {
+    transform: translateX(-14px) scaleY(1.4);
+    opacity: 0.9;
+  }
+}
+.water-glint {
+  animation: shimmer-water 5s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .bulb,
+  .seal-pulse,
+  .eq-bar,
+  .water-glint {
+    animation: none !important;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Filament bulbs on the sign's strand: each one breathes on its own clock */
+@keyframes bulb-drop {
+  0%,
+  100% {
+    filter: brightness(0.62);
+    box-shadow: 0 0 5px 0 color-mix(in srgb, var(--bulb-color) 55%, transparent);
+  }
+  45% {
+    filter: brightness(1.25);
+    box-shadow: 0 0 14px 3px color-mix(in srgb, var(--bulb-color) 70%, transparent);
+  }
+}
+
+.bulb-drop {
+  animation: bulb-drop 2.6s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bulb-drop {
+    animation: none !important;
+    filter: brightness(1.05);
+  }
+}
