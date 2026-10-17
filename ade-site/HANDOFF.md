@@ -259,5 +259,5 @@ merch prices or drop details.
   UNESCO monument, stay in accessible areas, no smoking or drugs, hands off.
 - **History** (`House.tsx`): cut to four chapters + a 3-photo gallery. All
   images after the hero facade come from `VENUE` in `media.ts`, which points at
-  `public/images/venue/` (stairs, painted-ceiling, fanlight, grand-room-fisheye, grand-room, hallway, gilded-room .webp; supplied by HIFI). Until
-  those files exist, the old hotlinked archive photos are used as fallback.
+  `public/images/venue/` (stairs, painted-ceiling, fanlight, grand-room-fisheye, grand-room, hallway, gilded-room .webp; supplied by HIFI). All seven are in; the old hotlinked archive photos remain
+  only as a load-failure fallback.

@@ -35,11 +35,11 @@ export const HIFI_LOGO = "/images/hifi-logo.webp";
 
 /* Interior photography of the monument, supplied by HIFI. Shown in the history
    section and the footer, everywhere after the hero facade. Files live in
-   public/images/venue/; until a file is present the hotlinked archive shot
+   public/images/venue/; if one ever fails to load, the hotlinked archive shot
    in `fallback` is used instead. */
 export const VENUE = [
   { src: "/images/venue/stairs.webp", fallback: IMG.stairs, alt: "Looking up the stairwell: dark wooden balustrade and Louis XV stucco to the skylight" },
-  { src: "/images/venue/painted-ceiling.webp", fallback: IMG.verkolje, alt: "The painted ceiling, a sky full of figures, over a room lit purple and pink" },
+  { src: "/images/venue/painted-ceiling.webp", fallback: IMG.verkolje, pos: "object-[50%_15%]", alt: "The painted ceiling, a sky full of figures, over a room lit purple and pink" },
   { src: "/images/venue/fanlight.webp", fallback: IMG.entrance, alt: "The carved front door and arrow fanlight under a stucco ceiling" },
   { src: "/images/venue/grand-room-fisheye.webp", fallback: IMG.hall, alt: "Feet up in the grand room, fisheye view of the stucco ceiling and canal windows" },
   { src: "/images/venue/grand-room.webp", fallback: IMG.lantern, alt: "The grand room: stucco ceiling, gilded mirror and tall windows onto the Herengracht" },

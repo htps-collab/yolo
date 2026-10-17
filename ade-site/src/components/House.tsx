@@ -58,7 +58,7 @@ function Chapter({ c, i, onActive }: { c: (typeof CHAPTERS)[number]; i: number; 
       </motion.div>
       {/* Mobile image inline */}
       <div className="mt-8 overflow-hidden rounded-[1.5rem]">
-        <SafeImg src={c.photo.src} fallbackSrc={c.photo.fallback} alt={c.photo.alt} loading="lazy" className="aspect-[4/3] w-full object-cover lg:hidden" />
+        <SafeImg src={c.photo.src} fallbackSrc={c.photo.fallback} alt={c.photo.alt} loading="lazy" className={`aspect-[4/3] w-full object-cover lg:hidden ${"pos" in c.photo ? c.photo.pos : ""}`} />
       </div>
     </div>
   );
