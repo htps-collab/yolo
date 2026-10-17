@@ -70,13 +70,13 @@ export function Footer() {
             />
             <div>
               <blockquote className="max-w-3xl font-serif text-[clamp(1.5rem,3vw,2.25rem)] italic leading-[1.15] tracking-tight text-ivory/90">
-                “Either way, it will work out and it will be sick.”
+                “We can’t wait to have you at HIFI Amsterdam.”
               </blockquote>
               <p className="mt-3 text-sm text-ivory/50">
-                <a href={LINKS.max} target="_blank" rel="noreferrer" className="underline-offset-4 hover:underline">
+                <a href={LINKS.max} target="_blank" rel="noreferrer" className="font-medium uppercase tracking-[0.14em] text-ivory/80 underline-offset-4 hover:underline">
                   Boom Boom Mancini
                 </a>
-                , <span className="font-hifi text-[0.9em] text-ivory/70">HIFI 609</span>
+                , <span className="font-hifi text-[0.9em] text-ivory/70">HIFI 609</span> Founder
               </p>
 
               <a
