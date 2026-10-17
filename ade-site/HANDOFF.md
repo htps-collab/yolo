@@ -248,7 +248,7 @@ merch prices or drop details.
   Flow floor plan / sales logistics.
 - **Lineup:** four artist cards in set order with set-time pills. DJ Cringey
   (`public/images/dj-cringey.webp`) and DJ Hyperdrive
-  (`public/images/dj-hyperdrive.webp`) added. Tag on the new DJs: "On the decks".
+  (`public/images/dj-hyperdrive.webp`) added. Tag on all four: "Certified Sesh Dawg".
 - **Timetable** (replaces "Run of the day"): `SETS` in `event.ts` is the single
   source for cards, timetable, ticker, .ics and JSON-LD.
   16:00 MCR-T · 16:45 DJ Cringey · 17:30 DJ Hyperdrive · 18:15 Clara Cuvé.

@@ -32,8 +32,8 @@ type Artist = {
 
 const ARTISTS: Artist[] = [
   { name: "MCR-T", tag: "Certified Sesh Dawg", sound: "Rap vocals over underground club techno", handle: "@kolegajj", link: LINKS.mcrT, img: ARTIST.mcrt, pos: "object-[50%_22%]" },
-  { name: "DJ Cringey", tag: "On the decks", img: ARTIST.cringey, pos: "object-[50%_20%]" },
-  { name: "DJ Hyperdrive", tag: "On the decks", img: ARTIST.hyperdrive, pos: "object-[50%_25%]" },
+  { name: "DJ Cringey", tag: "Certified Sesh Dawg", img: ARTIST.cringey, pos: "object-[50%_20%]" },
+  { name: "DJ Hyperdrive", tag: "Certified Sesh Dawg", img: ARTIST.hyperdrive, pos: "object-[50%_25%]" },
   { name: "Clara Cuvé", tag: "Certified Sesh Dawg", sound: "Fast, groovy techno into breaks, jungle and electro", handle: "@clara_cuve", link: LINKS.clara, img: ARTIST.claraCuve, pos: "object-[50%_18%]" },
 ];
 
