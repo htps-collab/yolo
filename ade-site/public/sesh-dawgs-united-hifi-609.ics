@@ -1,0 +1,24 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//HIFI 609//Sesh Dawgs United ADE Pop-Up//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:sesh-dawgs-united-hifi609-20261024@hifiamsterdam.com
+DTSTAMP:20261017T120000Z
+DTSTART:20261024T140000Z
+DTEND:20261024T170000Z
+SUMMARY:Sesh Dawgs United at HIFI 609 — ADE Pop-Up
+DESCRIPTION:One day only. Doors 16:00–19:00. Arrive early: capacity is li
+ mited.\n16:00 MCR-T\n16:45 DJ Cringey\n17:30 DJ Hyperdrive\n18:15 Clara Cu
+ vé\nSESH kits + limited HIFI 609 merch. Live on https://www.youtube.com/@
+ HiFiAmsterdam
+LOCATION:HIFI 609\, Herengracht 609\, Amsterdam\, Netherlands
+URL:https://www.youtube.com/@HiFiAmsterdam
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Doors open in 2 hours at Herengracht 609
+TRIGGER:-PT2H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

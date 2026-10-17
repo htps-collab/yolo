@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sesh Dawgs United at HIFI 609 | ADE Pop-Up, Sat 24 Oct</title>
+    <meta name="description" content="Sesh Dawgs United pop-up at HIFI 609, Herengracht 609. ADE, Saturday 24 October, 16:00–19:00. MCR-T, DJ Cringey, DJ Hyperdrive and Clara Cuvé live, SESH kits and limited HIFI 609 merch inside a 1742 Amsterdam monument." />
+    <meta name="theme-color" content="#0b0b0d" />
+
+    <!-- Icons: cropped from the exact HIFI logo file -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+    <!-- Sharing. Swap the og:image / og:url values for absolute URLs once the
+         production domain is known; Facebook and LinkedIn require absolute. -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="HIFI 609 × Sesh Dawgs United" />
+    <meta property="og:title" content="Sesh Dawgs United at HIFI 609 — ADE Pop-Up" />
+    <meta property="og:description" content="One day only. Sat 24 Oct, 16:00–19:00, Herengracht 609, Amsterdam. MCR-T, DJ Cringey, DJ Hyperdrive and Clara Cuvé live, plus limited HIFI 609 merch. Arrive early." />
+    <meta property="og:image" content="/og.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Sesh Dawgs United at HIFI 609 — MCR-T and Clara Cuvé in front of a wall of speakers" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Sesh Dawgs United at HIFI 609 — ADE Pop-Up" />
+    <meta name="twitter:description" content="One day only. Sat 24 Oct, 16:00–19:00, Herengracht 609, Amsterdam." />
+    <meta name="twitter:image" content="/og.jpg" />
+
+    <!-- Event structured data: lets search engines show the date and venue.
+         Mixed attendance because the sets are also livestreamed. -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Event",
+        "name": "Sesh Dawgs United at HIFI 609 — ADE Pop-Up",
+        "description": "A one-day ADE pop-up: four DJs, Sesh Dawgs United merch and limited HIFI 609 merch inside the 1742 canal monument at Herengracht 609, hosted by HIFI. Also streamed live on HIFI's YouTube.",
+        "startDate": "2026-10-24T16:00:00+02:00",
+        "endDate": "2026-10-24T19:00:00+02:00",
+        "eventStatus": "https://schema.org/EventScheduled",
+        "eventAttendanceMode": "https://schema.org/MixedEventAttendanceMode",
+        "location": [
+          {
+            "@type": "Place",
+            "name": "HIFI 609",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "Herengracht 609",
+              "addressLocality": "Amsterdam",
+              "addressCountry": "NL"
+            }
+          },
+          { "@type": "VirtualLocation", "url": "https://www.youtube.com/@HiFiAmsterdam" }
+        ],
+        "image": ["/og.jpg"],
+        "performer": [
+          { "@type": "Person", "name": "MCR-T" },
+          { "@type": "Person", "name": "DJ Cringey" },
+          { "@type": "Person", "name": "DJ Hyperdrive" },
+          { "@type": "Person", "name": "Clara Cuvé" }
+        ],
+        "organizer": [
+          { "@type": "Organization", "name": "HIFI Amsterdam", "url": "https://hifiamsterdam.com" },
+          { "@type": "Organization", "name": "Sesh Dawgs United", "url": "https://sesh.group/" }
+        ]
+      }
+    </script>
+
+    <!-- Self-hosted fonts (see src/index.css). Preload the two hero faces so the
+         headline paints in-brand on first frame. -->
+    <link rel="preload" href="/fonts/anton.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/silkscreen-700.woff2" as="font" type="font/woff2" crossorigin />
+
+    <link rel="preconnect" href="https://www.amsterdam-monumentenstad.nl" />
+    <link rel="preconnect" href="https://f4.bcbits.com" />
+    <link rel="preconnect" href="https://static.wixstatic.com" />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
