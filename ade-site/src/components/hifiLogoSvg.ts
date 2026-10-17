@@ -1,5 +1,5 @@
 /* HIFI logo — the exact uploaded purple neon "HF" mark.
-   The primary source is public/images/hifi-logo-purple.png (the same image).
+   The primary source is public/images/hifi-logo.webp (the same mark).
    This inline copy is only the SafeImg fallback, used if that file ever fails
    to load, so the real logo still shows without a network request. It is the
    uploaded image itself (base64), not a recreation. */

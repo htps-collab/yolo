@@ -27,10 +27,11 @@ export const IMG = {
   dewit1928: `${MON}/2/dewit-plafond2.jpg`,
 };
 
-/* HIFI purple logo — the exact uploaded "HF" neon mark, served from
-   public/images/hifi-logo-purple.png. hifiLogoSvg.ts (HIFI_LOGO_SVG) holds the
-   same image inline as a SafeImg fallback. */
-export const HIFI_LOGO = "/images/hifi-logo-purple.png";
+/* HIFI purple logo — the exact uploaded "HF" neon mark (the high-res upload of
+   17 Oct, square-cropped), served from public/images/hifi-logo.webp.
+   hifiLogoSvg.ts (HIFI_LOGO_SVG) holds the earlier copy of the same mark
+   inline as a SafeImg fallback. */
+export const HIFI_LOGO = "/images/hifi-logo.webp";
 
 /* Interior photography of the monument, supplied by HIFI. Shown in the history
    section and the footer, everywhere after the hero facade. Files live in
@@ -41,7 +42,8 @@ export const VENUE = [
   { src: "/images/venue/painted-ceiling.webp", fallback: IMG.verkolje, alt: "The painted ceiling, a sky full of figures, over a room lit purple and pink" },
   { src: "/images/venue/fanlight.webp", fallback: IMG.entrance, alt: "The carved front door and arrow fanlight under a stucco ceiling" },
   { src: "/images/venue/grand-room-fisheye.webp", fallback: IMG.hall, alt: "Feet up in the grand room, fisheye view of the stucco ceiling and canal windows" },
-  { src: "/images/venue/grand-room.webp", fallback: IMG.hall2, alt: "The grand room: stucco ceiling, gilded mirror and tall windows onto the Herengracht" },
+  { src: "/images/venue/grand-room.webp", fallback: IMG.lantern, alt: "The grand room: stucco ceiling, gilded mirror and tall windows onto the Herengracht" },
+  { src: "/images/venue/hallway.webp", fallback: IMG.hall2, alt: "The marble hallway with a red runner, rococo stucco and a hanging lantern" },
   { src: "/images/venue/gilded-room.webp", fallback: IMG.mantel, alt: "Gold-panelled room with a black marble fireplace, a cowhide chaise and a dog statue" },
 ];
 

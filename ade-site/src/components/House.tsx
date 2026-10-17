@@ -36,6 +36,7 @@ const CHAPTERS = [
 const GALLERY = [
   { photo: VENUE[4] },
   { photo: VENUE[5] },
+  { photo: VENUE[6] },
 ];
 
 function Chapter({ c, i, onActive }: { c: (typeof CHAPTERS)[number]; i: number; onActive: (i: number) => void }) {
@@ -149,11 +150,11 @@ export function House() {
         <Reveal>
           <p className="text-sm text-ivory/45">Inside the monument</p>
         </Reveal>
-        <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2">
+        <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-3">
           {GALLERY.map((g, i) => (
             <Reveal key={g.photo.src} delay={i * 0.08}>
               <figure className="overflow-hidden rounded-[1.75rem] bg-ink ring-1 ring-ivory/10">
-                <SafeImg src={g.photo.src} fallbackSrc={g.photo.fallback} alt={g.photo.alt} loading="lazy" className="aspect-[4/3] w-full object-cover" />
+                <SafeImg src={g.photo.src} fallbackSrc={g.photo.fallback} alt={g.photo.alt} loading="lazy" className="aspect-[3/4] w-full object-cover" />
               </figure>
             </Reveal>
           ))}

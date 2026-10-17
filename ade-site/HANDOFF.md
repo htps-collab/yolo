@@ -72,7 +72,7 @@ countdown, the calendar links and the maps link.
   the experience; don't restructure for its own sake. The second reference site
   they shared earlier was context only.
 - **HIFI logo:** use their exact image file
-  (`public/images/hifi-logo-purple.png`). Never recreate or redraw it. The
+  (`public/images/hifi-logo.webp`). Never recreate or redraw it. The
   favicons are crops of that same file.
 - **Name:** always **Boom Boom Mancini**, never "Max" or "Max Calcaterra". This
   includes casual mentions; the short form "Boom Boom" is used in the donation
@@ -149,7 +149,7 @@ countdown, the calendar links and the maps link.
 ```
 index.html                     meta, OG/Twitter, JSON-LD Event, font preloads, favicons
 public/
-  images/                      hifi-logo-purple.png, mcrt.webp, clara-cuve.webp, headliners.webp, sesh-kit-duo.webp
+  images/                      hifi-logo.webp, mcrt.webp, dj-cringey.webp, dj-hyperdrive.webp, merch/, venue/, clara-cuve.webp, headliners.webp, sesh-kit-duo.webp
   fonts/                       self-hosted woff2 (latin): Newsreader opsz (+italic), Geist, Geist Mono, Anton, Silkscreen 400/700
   og.jpg                       share card
   favicon-32.png, apple-touch-icon.png
@@ -259,5 +259,5 @@ merch prices or drop details.
   UNESCO monument, stay in accessible areas, no smoking or drugs, hands off.
 - **History** (`House.tsx`): cut to four chapters + a 3-photo gallery. All
   images after the hero facade come from `VENUE` in `media.ts`, which points at
-  `public/images/venue/` (stairs, painted-ceiling, fanlight, grand-room-fisheye, grand-room, gilded-room .webp; supplied by HIFI). Until
+  `public/images/venue/` (stairs, painted-ceiling, fanlight, grand-room-fisheye, grand-room, hallway, gilded-room .webp; supplied by HIFI). Until
   those files exist, the old hotlinked archive photos are used as fallback.
